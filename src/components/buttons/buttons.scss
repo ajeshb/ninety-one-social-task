@@ -2,6 +2,8 @@
 
 $primary-button-color: #ff7d7d;
 $secondary-button-color: #b1dcb1;
+$header-button-backgorund-color: #f9bdbd;
+$header-button-hover-backgorund-color: #ff7d7d;
 
 .button{
     width: 100%;
@@ -20,5 +22,17 @@ $secondary-button-color: #b1dcb1;
         background-color: $disabled-button-color;
         user-select: disabled;
         pointer-events: none;
+    }
+}
+
+.header-button{
+    margin-left: 20px;
+    border: 1px solid gray;
+    border-radius: 6px;
+    padding: 5px 10px;
+    height: 30px;
+    background-color: $header-button-backgorund-color;
+    &:hover{
+        background-color: $header-button-hover-backgorund-color;
     }
 }

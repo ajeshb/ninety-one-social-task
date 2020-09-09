@@ -1,0 +1,14 @@
+@import './variable.scss';
+
+.app{
+    position: relative;
+    left: 0;
+    right: 0;
+    > .container{
+        position: relative;
+        margin-top: 80px;
+        min-height: calc(100vh - 80px);
+        left: 0;
+        right: 0;
+    }
+}

@@ -1,0 +1,30 @@
+@import './../../variable.scss';
+
+$header-background-color: #ccccf9;
+.header{
+    height: 60px;
+    padding: 10px 40px;
+    display: flex;
+    background: $header-background-color;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    justify-content: space-between;
+    z-index: 10;
+    .left-menu{
+        display: flex;
+        align-items: center;
+        img{
+            height: 40px;
+        }
+    }
+    .menu{
+        display: flex;
+        align-items: center;
+        .username{
+            font-size: 16px;
+            font-weight: bold;
+        }
+    }
+}
