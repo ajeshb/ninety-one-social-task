@@ -11,6 +11,6 @@ export const {
   userLogin,
   userLogout
 } = createActions({
-  [ActionTypes.USER_LOGIN]: (username, password) => ({ username, password }),
+  [ActionTypes.USER_LOGIN]: (userKey) => ({ userKey }),
   [ActionTypes.USER_LOGOUT]: () => ({ }),
 })

@@ -2,7 +2,6 @@ import { handleActions } from 'redux-actions'
 import immutable from 'immutability-helper'
 
 import { STATUS, ActionTypes } from '../constants/index'
-import { getCookie } from '../../services/cookie';
 
 export const userState = {
   login: {

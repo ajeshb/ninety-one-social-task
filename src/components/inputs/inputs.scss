@@ -1,0 +1,19 @@
+@import './../../variable.scss';
+
+.input{
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    label{
+        margin-bottom: 10px;
+        color: $label-color;
+    }
+    input {
+        height: 30px;
+        border: 1px solid gray;
+        border-radius: 2px;
+        padding: 5px;
+        color: $input-font-color;
+    }
+}

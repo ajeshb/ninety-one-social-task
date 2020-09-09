@@ -1,4 +1,3 @@
-import { getCookie } from './cookie'
 
 /**
  * Client
@@ -33,7 +32,6 @@ export const parseError = (error) => {
  * @returns {Promise}
  */
 export const request = (url, options = {}) => {
-  console.log('inside request')
   const config = {
     method: 'GET',
     ...options
@@ -51,16 +49,7 @@ export const request = (url, options = {}) => {
   if (errors.length) {
     throw new Error(`Error! You must pass \`${errors.join('`, `')}\``)
   }
-
-  let headers = {
-    Accept: 'application/json',
-    'Content-Type': 'application/json'
-  }
-  const authToken = getCookie('token')
-
-  if (authToken && !config.isFormData && !options.disableAuthorization) {
-    headers['x-api-key'] = authToken
-  }
+  let headers = {}
   if (config.payload && config.payload.headers) {
     headers = { ...headers, ...config.payload.headers }
   }

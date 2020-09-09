@@ -1,7 +1,7 @@
 import auth from './auth'
-import awards from './awards'
+import dashboard from './dashboard'
 
 export default {
   ...auth,
-  ...awards,
+  ...dashboard,
 }

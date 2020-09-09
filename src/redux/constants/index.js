@@ -34,9 +34,9 @@ export const STATUS = {
 }
 
 const API_BASE_URL = 'https://api.spacexdata.com/v3'
-const LOGIN_API_BASE_URL = 'https://run.mocky.io/v3/'
+const LOGIN_API_BASE_URL = 'https://run.mocky.io/v3'
 
 export const APIEndpoints = {
-  LOGIN: `${LOGIN_API_BASE_URL}/2442f65f-3ba7-4264-a8de-5bb04188497d`,
+  LOGIN: (userKey) =>`${LOGIN_API_BASE_URL}/${userKey}`,
   CATEGORY_GET_LIST: `${API_BASE_URL}/list`
 }

@@ -1,0 +1,24 @@
+@import './../../variable.scss';
+
+$primary-button-color: #ff7d7d;
+$secondary-button-color: #b1dcb1;
+
+.button{
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid gray;
+    border-radius: 2px;
+    padding: 5px;
+    height: 40px;
+    &.primary{
+        background-color: $primary-button-color;
+    }
+    &.secondary{
+        background-color: $secondary-button-color;
+    }
+    &.disabled{
+        background-color: $disabled-button-color;
+        user-select: disabled;
+        pointer-events: none;
+    }
+}
