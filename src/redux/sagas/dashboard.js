@@ -9,19 +9,19 @@ import { ActionTypes, APIEndpoints } from '../constants/index'
 import { request } from '../../services/client'
 
 
-export function * getCategoryList ({ payload }) {
+export function * getCompanyInfo ({ payload }) {
   try {
-    const response = yield call(request, APIEndpoints.CATEGORY_GET_LIST, {
+    const response = yield call(request, APIEndpoints.GET_COMPANY_INFO, {
       method: 'GET'
     })
     yield put({
-      type: ActionTypes.CATEGORY_GET_LIST_SUCCESS,
+      type: ActionTypes.GET_COMPANY_INFO_SUCCESS,
       payload: response
     })
   } catch (err) {
     /* istanbul ignore next */
     yield put({
-      type: ActionTypes.CATEGORY_GET_LIST_FAILURE,
+      type: ActionTypes.GET_COMPANY_INFO_FAILURE,
       payload: err
     })
   }
@@ -31,6 +31,6 @@ export function * getCategoryList ({ payload }) {
  */
 export default function * root () {
   yield all([
-    takeLatest(ActionTypes.CATEGORY_GET_LIST, getCategoryList)
+    takeLatest(ActionTypes.GET_COMPANY_INFO, getCompanyInfo)
   ])
 }

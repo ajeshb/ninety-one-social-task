@@ -3,3 +3,27 @@
 .dashboard{
     padding: 20px;
 }
+
+.company-info{
+    padding: 20px;
+    width: 300px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    > h4{
+        font-weight: bold;
+        margin-top: 0px;
+    }
+    .details{
+        display: flex;
+        flex-direction: column;
+        .item{
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            p{
+                margin: 0;
+                font-weight: bold;
+            }
+        }
+    }
+}

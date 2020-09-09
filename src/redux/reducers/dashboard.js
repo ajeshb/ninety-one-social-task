@@ -5,9 +5,9 @@ import { parseError } from '../../services/client'
 import { ActionTypes, STATUS } from '../constants/index'
 
 export const dashboardState = {
-  categories: {
+  info: {
     message: '',
-    data: [],
+    data: {},
     status: STATUS.IDLE
   }
 }
@@ -15,23 +15,23 @@ export const dashboardState = {
 export default {
   dashboard: handleActions(
     {
-      [ActionTypes.CATEGORY_GET_LIST]: (state, { payload }) =>
+      [ActionTypes.GET_COMPANY_INFO]: (state, { payload }) =>
         immutable(state, {
-          categories: {
+          info: {
             status: { $set: STATUS.RUNNING },
           }
         }),
-      [ActionTypes.CATEGORY_GET_LIST_SUCCESS]: (state, { payload }) => {
+      [ActionTypes.GET_COMPANY_INFO_SUCCESS]: (state, { payload }) => {
         return immutable(state, {
-          categories: {
+          info: {
             data: { $set: payload },
             status: { $set: STATUS.READY },
           }
         })
       },
-      [ActionTypes.CATEGORY_GET_LIST_FAILURE]: (state, { payload }) =>
+      [ActionTypes.GET_COMPANY_INFO_FAILURE]: (state, { payload }) =>
         immutable(state, {
-          categories: {
+          info: {
             message: { $set: parseError(payload.message) },
             status: { $set: STATUS.ERROR }
           }

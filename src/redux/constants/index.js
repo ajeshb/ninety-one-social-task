@@ -19,6 +19,10 @@ export const ActionTypes = keyMirror({
 
   CATEGORY_GET_LIST: undefined,
 
+  GET_COMPANY_INFO: undefined,
+  GET_COMPANY_INFO_SUCCESS: undefined,
+  GET_COMPANY_INFO_FAILURE: undefined,
+
 })
 
 /**
@@ -38,5 +42,6 @@ const LOGIN_API_BASE_URL = 'https://run.mocky.io/v3'
 
 export const APIEndpoints = {
   LOGIN: (userKey) =>`${LOGIN_API_BASE_URL}/${userKey}`,
+  GET_COMPANY_INFO: `${API_BASE_URL}/info`,
   CATEGORY_GET_LIST: `${API_BASE_URL}/list`
 }
