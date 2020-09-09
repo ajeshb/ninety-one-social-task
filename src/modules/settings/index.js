@@ -7,7 +7,7 @@ import './index.scss'
 function Settings() {
   return (
     <div className="settings">
-      Settings Page - Admin only access
+      <h4>Settings Page - Admin only access</h4>
     </div>
   );
 }

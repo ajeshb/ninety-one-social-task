@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 
@@ -12,8 +12,25 @@ import Settings from './../settings'
 import Login from './../login'
 import NotFound from './../notFound'
 
-function Routes({user, isAuthenticated}) {
-    const defaultPage = '/dashboard'
+const privatePages =[
+  '/dashboard',
+  '/missions',
+  '/settings'
+]
+
+class Routes extends Component {
+  constructor (props) {
+    super(props)
+    const loadedRoute = window.location.pathname
+    const index = privatePages.indexOf(loadedRoute)
+    this.state = {
+      defaultPage: index > -1 ? `${loadedRoute}${window.location.search}` : '/dashboard'
+    }
+  }
+
+  render () {
+    const {user, isAuthenticated} = this.props
+    const { defaultPage } = this.state
 
     return (
       <Switch>
@@ -59,6 +76,7 @@ function Routes({user, isAuthenticated}) {
         <Redirect to='/not-found' />
       </Switch>
     )
+  }
 }
 
 function mapStateToProps (state) {
