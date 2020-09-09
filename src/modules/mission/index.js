@@ -1,13 +1,15 @@
 import React from 'react'
 import './index.scss'
+
 import withSidebar from '../../components/layout/withSidebar';
 
-function Dashboard() {
+function Missions() {
   return (
-    <div className="dashboard">
-      Dashboard Page
+    <div className="mission">
+        
+      Mission Page
     </div>
   );
 }
 
-export default withSidebar(Dashboard);
+export default withSidebar(Missions);

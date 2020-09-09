@@ -2,7 +2,7 @@ const users = [
     {
         username: 'admin',
         password: 'admin@123',
-        key: '09f6a340-a137-4522-affa-f39dbb8a2dc9'
+        key: 'dd05a445-701b-4297-9f74-55a682811780'
     }, {
         username: 'user',
         password: 'user@123',

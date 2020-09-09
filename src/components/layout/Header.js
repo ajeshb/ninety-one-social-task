@@ -13,6 +13,10 @@ class Header extends Component {
         this.props.dispatch(userLogout())
     }
 
+    onClickSettings = () => {
+        this.props.history.push('/settings')
+    }
+
     render() {
         const { isAuthenticated, user } = this.props
         return (
@@ -24,7 +28,7 @@ class Header extends Component {
                     { isAuthenticated ? (
                         <Fragment>
                             <p className='username'>{user.name}</p>
-                            { user && user.role === 'admin' ? <HeaderButton icon={<SettingsIcon />} onClick={this.onClickLogout} /> : null }
+                            { user && user.role === 'admin' ? <HeaderButton icon={<SettingsIcon />} onClick={this.onClickSettings} /> : null }
                             <HeaderButton text={'Logout'} onClick={this.onClickLogout} />
                         </Fragment> 
                     ) : null}

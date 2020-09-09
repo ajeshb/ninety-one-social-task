@@ -37,4 +37,34 @@ $footer-background-color: #123;
     display: flex;
     background: $footer-background-color;
     color: white;
+    z-index: 10;
+}
+
+.side-bar{
+    width: $side-bar-width;
+    position: fixed;
+    left: 0;
+    top: 80px;
+    height: calc( 100% - 80px);
+    border-right: 1px solid gray;
+    .side-bar-tab{
+        height: 20px;
+        padding: 20px;
+        background: #e0dfdf;
+        border-bottom: 1px solid #ababab;
+        &:hover{
+            background: #dadada;
+        }
+        &.active{
+            background: #afacac;
+        }
+        p{
+            font-size: 16px;
+            margin: 0;
+        }
+    }
+}
+
+.side-bar-container{
+    padding-left: $side-bar-width;
 }

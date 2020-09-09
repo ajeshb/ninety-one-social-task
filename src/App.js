@@ -4,10 +4,10 @@ import { ToastContainer } from 'react-toastify'
   
 import Routes from './modules/routes/Routes'
 import Header from './components/layout/Header'
+import Footer from './components/layout/Footer'
 
 import 'react-toastify/dist/ReactToastify.css'
 import './app.scss'
-import Footer from './components/layout/Footer';
 
 function App() {
   return (

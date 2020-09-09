@@ -6,11 +6,15 @@ import PrivateRoute from './PrivateRoute'
 import PublicRoute from './PublicRoute'
 
 import Dashboard from './../dashboard'
+import Missions from './../mission'
+import Settings from './../settings'
+
 import Login from './../login'
 import NotFound from './../notFound'
 
-function Routes({user}) {
+function Routes({user, isAuthenticated}) {
     const defaultPage = '/dashboard'
+
     return (
       <Switch>
         <Redirect
@@ -19,19 +23,34 @@ function Routes({user}) {
           to={defaultPage}
         />
         <PublicRoute
-          isAuthenticated={user.isAuthenticated}
+          isAuthenticated={isAuthenticated}
           to={defaultPage}
           path='/login'
           exact
           component={Login}
         />
         <PrivateRoute
-          isAuthenticated={user.isAuthenticated}
+          isAuthenticated={isAuthenticated}
           path='/dashboard'
           to='/login'
           exact
           component={Dashboard}
         />
+        <PrivateRoute
+          isAuthenticated={isAuthenticated}
+          path='/missions'
+          to='/login'
+          exact
+          component={Missions}
+        />
+        {user.role === 'admin' ? <PrivateRoute
+            isAuthenticated={isAuthenticated}
+            path='/settings'
+            to='/login'
+            exact
+            component={Settings}
+          /> 
+        : null}
         <Route
           component={NotFound}
           exact
@@ -44,7 +63,7 @@ function Routes({user}) {
 
 function mapStateToProps (state) {
   return {
-    user: state.auth
+    ...state.auth
   }
 }
 
