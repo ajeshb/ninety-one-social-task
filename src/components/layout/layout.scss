@@ -1,6 +1,8 @@
 @import './../../variable.scss';
 
 $header-background-color: #ccccf9;
+$footer-background-color: #123;
+
 .header{
     height: 60px;
     padding: 10px 40px;
@@ -27,4 +29,12 @@ $header-background-color: #ccccf9;
             font-weight: bold;
         }
     }
+}
+
+.footer{
+    height: 40px;
+    padding: 10px 40px;
+    display: flex;
+    background: $footer-background-color;
+    color: white;
 }

@@ -7,6 +7,7 @@ import Header from './components/layout/Header'
 
 import 'react-toastify/dist/ReactToastify.css'
 import './app.scss'
+import Footer from './components/layout/Footer';
 
 function App() {
   return (
@@ -18,9 +19,7 @@ function App() {
         </BrowserRouter>
         <ToastContainer />
       </div>
-      <footer>
-          footer
-      </footer>
+      <Footer />
     </div>
   );
 }

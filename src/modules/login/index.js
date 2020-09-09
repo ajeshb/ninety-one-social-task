@@ -9,6 +9,7 @@ import { userLogin } from '../../redux/actions'
 import { validateUser } from '../../services/utility'
 
 import './index.scss'
+import { STATUS } from '../../redux/constants';
 
 
 class Login extends Component {
@@ -19,6 +20,12 @@ class Login extends Component {
       password: ''
     }
   }
+
+  componentWillReceiveProps = nextProps => {
+    if(nextProps.login.status !== this.props.login.status && nextProps.login.status === STATUS.ERROR) {
+      toast.error('User does not exists. Please check the credentials!')
+    }
+  }
   
   onChangeValue = ( type, value ) => {
     this.setState({ [type]: value })
@@ -27,8 +34,7 @@ class Login extends Component {
   onClickLogin = (e) => {
     e.preventDefault()
     const { username, password } = this.state
-    // Local user verification is done, it has to be in the client side
-    const { isValid, key } = validateUser(username, password)
+    const { isValid, key } = validateUser(username, password)  //user verification is implemented locally, it has to be in the client side
     if(isValid) {
       this.props.dispatch(userLogin(key))
     } else {
