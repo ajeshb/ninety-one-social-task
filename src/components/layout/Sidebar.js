@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 
@@ -43,7 +43,7 @@ class Sidebar extends Component {
         return (
             <div className='side-bar' >
                 {allowedPages.map(page => (
-                    <div className={`side-bar-tab ${this.currentPage === page.path ? 'active': ''}`} onClick={() => this.onSelectPage(page.path)} >
+                    <div key={page.path} className={`side-bar-tab ${this.currentPage === page.path ? 'active': ''}`} onClick={() => this.onSelectPage(page.path)} >
                         <p className='page-title' >{page.name}</p>
                     </div>
                 ))}

@@ -3,9 +3,6 @@ import Sidebar from './Sidebar'
 
 export default function withSidebar(ChildComponent) {
     return class extends Component{
-        constructor(props) {
-            super(props);
-        }
         
         render(){
             return (

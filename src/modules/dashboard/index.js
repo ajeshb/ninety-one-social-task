@@ -22,7 +22,6 @@ class Dashboard extends Component {
 
   render() {
     const { info } = this.props
-    console.log('info', info)
     return (
       <div className="dashboard">
         <CompanyInfo details={info.data} />

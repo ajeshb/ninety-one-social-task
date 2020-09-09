@@ -17,7 +17,6 @@ const displayItems = [
 ]
 
 function CompanyInfo({details={}}) {
-    console.log('infor', details)
     return (
         <div className='company-info' >
             <h4 >Company Information</h4>
